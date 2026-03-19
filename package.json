@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "description": "Product-oriented network policy builder for @vercel/sandbox.",
   "keywords": [
-    "sandbox",
-    "policy",
-    "network-policy",
-    "vercel",
-    "credentials-brokering",
-    "openai",
     "anthropic",
-    "github"
+    "credentials-brokering",
+    "github",
+    "network-policy",
+    "openai",
+    "policy",
+    "sandbox",
+    "vercel"
   ],
   "homepage": "https://github.com/giselles-ai/sandbox-policy-builder#readme",
   "bugs": {
