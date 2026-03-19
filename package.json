@@ -1,8 +1,43 @@
 {
   "name": "@giselles-ai/sandbox-policy-builder",
-  "private": true,
+  "version": "0.1.0",
+  "description": "Product-oriented network policy builder for @vercel/sandbox.",
+  "keywords": [
+    "sandbox",
+    "policy",
+    "network-policy",
+    "vercel",
+    "credentials-brokering",
+    "openai",
+    "anthropic",
+    "github"
+  ],
+  "homepage": "https://github.com/giselles-ai/sandbox-policy-builder#readme",
+  "bugs": {
+    "url": "https://github.com/giselles-ai/sandbox-policy-builder/issues"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giselles-ai/sandbox-policy-builder.git"
+  },
+  "files": [
+    "dist"
+  ],
   "type": "module",
-  "module": "index.ts",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc --noEmit",
@@ -15,10 +50,10 @@
     "@types/bun": "latest",
     "oxfmt": "0.41.0",
     "oxlint": "1.56.0",
-    "tsup": "8.5.1"
+    "tsup": "8.5.1",
+    "typescript": "^5"
   },
   "peerDependencies": {
-    "@vercel/sandbox": "^1.8.1",
-    "typescript": "^5"
+    "@vercel/sandbox": "^1.8.1"
   }
 }
