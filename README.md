@@ -1,6 +1,6 @@
 # sandbox-policy-builder
 
-Build product-oriented network policies for [Vercel Sandbox](https://vercel.com/docs/vercel-sandbox).
+Build network policies for [Vercel Sandbox](https://vercel.com/docs/vercel-sandbox) around services instead of raw domains.
 
 Instead of writing low-level domain rules like this:
 
@@ -38,7 +38,7 @@ const sandbox = await Sandbox.create({
 });
 ```
 
-The package expands product names into the domain-level `NetworkPolicy` shape required by `@vercel/sandbox`.
+The package expands service names into the domain-level `NetworkPolicy` shape required by `@vercel/sandbox`.
 
 ## Why
 
@@ -49,9 +49,9 @@ That is precise, but repetitive in real apps:
 - `codex` and `openai` both target `api.openai.com`
 - `claude` requires `x-api-key` and `anthropic-version`
 - `github` often needs multiple related domains
-- `aiGateway` is conceptually one product, not one header rule
+- `aiGateway` is conceptually one service, not one header rule
 
-This package gives you a small DSL that matches how people usually think about these integrations: product first, transport details second.
+This package gives you a small DSL that matches how people usually think about these integrations: service first, transport details second.
 
 ## Installation
 
