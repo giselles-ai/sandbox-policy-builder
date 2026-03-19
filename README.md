@@ -91,26 +91,6 @@ const sandbox = await Sandbox.create({
 });
 ```
 
-Claude uses:
-
-- `x-api-key`
-- `anthropic-version`
-
-The default `anthropic-version` is `2023-06-01`.
-
-You can override it:
-
-```ts
-const sandbox = await Sandbox.create({
-  networkPolicy: allow({
-    claude: {
-      apiKey: process.env.ANTHROPIC_API_KEY!,
-      anthropicVersion: "2023-06-01",
-    },
-  }),
-});
-```
-
 ### GitHub
 
 ```ts
@@ -178,7 +158,7 @@ type AllowInput = Partial<{
   codex: { apiKey: string };
   openai: { apiKey: string };
   gemini: { apiKey: string };
-  claude: { apiKey: string; anthropicVersion?: string };
+  claude: { apiKey: string };
   github: { apiKey: string };
   aiGateway: { apiKey: string };
 }>;
@@ -223,8 +203,6 @@ import { Sandbox } from "@vercel/sandbox";
 import { allow } from "sandbox-policy-builder";
 
 const sandbox = await Sandbox.create({
-  runtime: "node24",
-  timeout: 30 * 60 * 1000,
   networkPolicy: allow({
     github: { apiKey: process.env.GITHUB_TOKEN! },
     aiGateway: { apiKey: process.env.AI_GATEWAY_TOKEN! },
